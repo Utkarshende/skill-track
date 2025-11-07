@@ -25,9 +25,11 @@ const App = () => {
      * @returns {string} Tailwind classes for styling the link.
      */
     const getNavLinkClasses = (pageId) => {
-        const baseClasses = "nav-link hover:text-primary transition duration-200 py-1";
+        // Defining 'primary' color for navigation consistency (equivalent to indigo-600)
+        const PRIMARY_COLOR = 'text-[#4f46e5]'; 
+        const baseClasses = "nav-link hover:text-[#4f46e5] transition duration-200 py-1";
         if (activePage === pageId) {
-            return `${baseClasses} text-primary border-b-2 border-primary font-bold`;
+            return `${baseClasses} ${PRIMARY_COLOR} border-b-2 border-[#4f46e5] font-bold`;
         }
         return `${baseClasses} text-gray-400`;
     };
@@ -37,7 +39,8 @@ const App = () => {
         <div className="text-gray-100 antialiased min-h-screen" 
              style={{
                 fontFamily: 'Inter, sans-serif',
-                background: 'linear-gradient(to bottom right, #030712, #111827)', 
+                // Updated background for better contrast
+                background: 'linear-gradient(to bottom right, #030712, #0f172a)', 
              }}>
 
             {/* Custom Alert Message Box */}
@@ -101,7 +104,7 @@ const App = () => {
                             {/* Stats Grid */}
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                                 {/* Stat Card 1 */}
-                                <div className="bg-[#111827] p-5 rounded-xl shadow-lg border border-gray-700/50 hover:shadow-primary/20 transition duration-300 transform hover:-translate-y-0.5">
+                                <div className="bg-[#111827] p-5 rounded-xl shadow-lg border border-gray-700/50 hover:shadow-xl hover:shadow-[#4f46e5]/20 transition duration-300 transform hover:-translate-y-0.5">
                                     <p className="text-sm font-medium text-gray-400">Courses Enrolled</p>
                                     <p className="text-3xl font-bold text-white mt-1">6</p>
                                     <p className="text-sm text-[#10b981] flex items-center mt-2">
@@ -110,7 +113,7 @@ const App = () => {
                                     </p>
                                 </div>
                                 {/* Stat Card 2 */}
-                                <div className="bg-[#111827] p-5 rounded-xl shadow-lg border border-gray-700/50 hover:shadow-primary/20 transition duration-300 transform hover:-translate-y-0.5">
+                                <div className="bg-[#111827] p-5 rounded-xl shadow-lg border border-gray-700/50 hover:shadow-xl hover:shadow-[#4f46e5]/20 transition duration-300 transform hover:-translate-y-0.5">
                                     <p className="text-sm font-medium text-gray-400">Total Completion</p>
                                     <p className="text-3xl font-bold text-white mt-1">45%</p>
                                     <p className="text-sm text-[#f59e0b] flex items-center mt-2">
@@ -119,13 +122,13 @@ const App = () => {
                                     </p>
                                 </div>
                                 {/* Stat Card 3 */}
-                                <div className="bg-[#111827] p-5 rounded-xl shadow-lg border border-gray-700/50 hover:shadow-primary/20 transition duration-300 transform hover:-translate-y-0.5">
+                                <div className="bg-[#111827] p-5 rounded-xl shadow-lg border border-gray-700/50 hover:shadow-xl hover:shadow-[#4f46e5]/20 transition duration-300 transform hover:-translate-y-0.5">
                                     <p className="text-sm font-medium text-gray-400">Hours Logged</p>
                                     <p className="text-3xl font-bold text-white mt-1">128</p>
                                     <p className="text-sm text-gray-500 mt-2">Total study time</p>
                                 </div>
                                  {/* Stat Card 4 */}
-                                <div className="bg-[#111827] p-5 rounded-xl shadow-lg border border-gray-700/50 hover:shadow-primary/20 transition duration-300 transform hover:-translate-y-0.5">
+                                <div className="bg-[#111827] p-5 rounded-xl shadow-lg border border-gray-700/50 hover:shadow-xl hover:shadow-[#4f46e5]/20 transition duration-300 transform hover:-translate-y-0.5">
                                     <p className="text-sm font-medium text-gray-400">Next Milestone</p>
                                     <p className="text-3xl font-bold text-white mt-1">JavaScript</p>
                                     <p className="text-sm text-[#4f46e5] mt-2">Finish Module 4</p>
@@ -133,7 +136,7 @@ const App = () => {
                             </div>
 
                             {/* Progress Section */}
-                            <div className="bg-[#111827] p-6 sm:p-8 rounded-2xl shadow-custom border border-gray-700/50">
+                            <div className="bg-[#111827] p-6 sm:p-8 rounded-2xl shadow-xl shadow-gray-900/50 border border-gray-700/50">
                                 <h2 className="text-2xl font-semibold text-white mb-6 border-b border-gray-700/50 pb-3">Your Progress Snapshot</h2>
 
                                 <div className="space-y-6">
@@ -229,45 +232,58 @@ const App = () => {
                     </div>
                 )}
 
-                {/* 3. PROFILE PAGE CONTAINER (Conditional Rendering) */}
+                {/* 3. PROFILE PAGE CONTAINER (Conditional Rendering) - HEAVILY STYLED */}
                 {activePage === 'profile' && (
                     <div className="transition-opacity duration-500 opacity-100">
-                        <div className="bg-[#111827] p-6 sm:p-10 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] border border-gray-700/50">
-                            <h1 className="text-4xl sm:text-5xl font-extrabold text-white mb-4">User Profile</h1>
-                            <p className="text-gray-400 text-lg mb-10 max-w-3xl">Update your public profile information below.</p>
+                        <div className="bg-[#111827] p-6 sm:p-10 rounded-2xl shadow-2xl shadow-gray-900/80 border border-gray-700/50">
+                            
+                            {/* Enhanced Header with Icon */}
+                            <div className="flex items-center mb-6">
+                                {/* User Icon (lucide-react equivalent) */}
+                                <svg className="w-10 h-10 text-[#6366f1] mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                                <h1 className="text-4xl sm:text-5xl font-extrabold text-white">Your Profile</h1>
+                            </div>
 
-                            {/* Profile Form (SIMPLIFIED) */}
+                            <p className="text-gray-400 text-lg mb-10 max-w-3xl border-b border-gray-700/50 pb-6">
+                                Update your public profile information below.
+                            </p>
+
+                            {/* Profile Form (SIMPLIFIED & STYLED) */}
                             <form className="max-w-2xl mx-auto space-y-8">
                                 
-                                {/* Username Field */}
+                                {/* Username Field - Read-only styling */}
                                 <div className="space-y-4">
-                                    <label htmlFor="username" className="block text-sm font-medium text-gray-300 mb-1">Username</label>
+                                    <label htmlFor="username" className="block text-sm font-bold text-gray-300 mb-1">Username (Immutable)</label>
                                     <input type="text" id="username" defaultValue="dev_user_01" disabled 
-                                           className="mt-1 block w-full p-3 border border-gray-600 rounded-lg shadow-inner bg-[#1f2937]/50 text-gray-500 cursor-not-allowed"/>
-                                    <p className="text-xs text-gray-500 mt-1">Username cannot be changed.</p>
+                                           className="mt-1 block w-full p-4 border border-gray-600 rounded-xl shadow-inner bg-[#1f2937]/70 text-gray-500 font-mono cursor-not-allowed"/>
                                 </div>
                                 
-                                {/* Bio Field, now using state */}
+                                {/* Bio Field, now using state - Premium Textarea Styling */}
                                 <div className="space-y-4">
-                                    <label htmlFor="bio" className="block text-sm font-medium text-gray-300 mb-1">Bio (Max 150 chars)</label>
+                                    <label htmlFor="bio" className="block text-sm font-bold text-gray-300 mb-1">Bio (Max 150 chars)</label>
                                     <textarea 
                                         id="bio" 
-                                        rows="3" 
+                                        rows="4" 
                                         value={userBio}
                                         onChange={(e) => setUserBio(e.target.value)}
-                                        className="mt-1 block w-full p-3 border border-gray-600 rounded-lg shadow-inner bg-[#1f2937] 
-                                                     focus:ring-2 focus:ring-[#4f46e5] focus:border-[#4f46e5] outline-none transition duration-150">
+                                        className="mt-1 block w-full p-4 border-2 border-gray-600 rounded-xl shadow-xl bg-[#1f2937] text-white
+                                                     focus:ring-4 focus:ring-[#6366f1]/50 focus:border-[#6366f1] outline-none transition duration-300">
                                     </textarea>
                                 </div>
                                 
+                                {/* Save Button - Gradient, Strong Shadow, and Hover Effect */}
                                 <button type="button" 
                                         onClick={() => {
                                             setActivePage('dashboard'); 
                                             showAppAlert('Profile updated successfully! Returning to Dashboard.');
                                         }}
-                                        className="w-full py-3 bg-[#4f46e5] text-white font-bold rounded-lg shadow-xl hover:bg-[#6366f1] transition duration-300 
-                                               transform hover:scale-[1.01] focus:ring-4 focus:ring-[#4f46e5]/50">
-                                    Save Profile
+                                        className="w-full py-4 text-white text-lg font-extrabold rounded-xl transition duration-500 
+                                                   bg-gradient-to-r from-[#4f46e5] to-[#6366f1] 
+                                                   shadow-2xl shadow-[#4f46e5]/40
+                                                   hover:from-[#6366f1] hover:to-[#4f46e5] 
+                                                   hover:scale-[1.02] hover:shadow-primary-lg 
+                                                   focus:ring-4 focus:ring-[#4f46e5]/70 focus:outline-none">
+                                    SAVE PROFILE
                                 </button>
                             </form>
                         </div>
