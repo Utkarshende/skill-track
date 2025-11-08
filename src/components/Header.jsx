@@ -1,11 +1,5 @@
 import React from 'react';
-
-/**
- * Renders the main navigation header.
- * @param {object} props - Component props
- * @param {string} props.activePage - The currently active page ID.
- * @param {function} props.setActivePage - Function to change the active page.
- */
+import { useState } from 'react';
 export default function Header({ activePage, setActivePage }) {
     
     // Moved styling logic inside the component to eliminate the prop dependency
