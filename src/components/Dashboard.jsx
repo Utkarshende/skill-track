@@ -2,7 +2,6 @@ import React from 'react';
 import { BookOpen, ArrowUp, Clock, Zap, Home } from 'lucide-react'; 
 
 function Dashboard() {
-    // Navigation hook removed to fix the Router context error
 
     const dashboardStats = [
         { title: "Courses Enrolled", value: "6", detail: "+2 Since last month", detailColor: 'text-[#10b981]', icon: BookOpen },
@@ -17,7 +16,6 @@ function Dashboard() {
         { title: "Backend & API Integration", percentage: 15, barColor: 'bg-[#f59e0b]' },
     ];
 
-    // Placeholder function for navigation since the router is unavailable
     const handleNavigation = (target) => {
         console.log(`Simulating navigation to ${target}. (Router not available)`);
     };
@@ -25,10 +23,9 @@ function Dashboard() {
     return (
         <div className="p-6 sm:p-10 max-w-7xl mx-auto bg-gray-900 min-h-screen">
             <h1 className="text-5xl font-extrabold text-white mb-10 text-center border-b-4 border-indigo-600/50 pb-4">
-                Dev Study Dashboard
+                Utkasrha's Learning Dashboard
             </h1>
-            
-            {/* Stats Grid */}
+       
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                 {dashboardStats.map((stat, index) => (
                     <div 
@@ -37,7 +34,6 @@ function Dashboard() {
                     >
                         <div className="flex justify-between items-start mb-2">
                             <p className="text-lg font-medium text-gray-400">{stat.title}</p>
-                            {/* FIX: Render the icon component directly using JSX syntax */}
                             {stat.icon && <stat.icon className="w-6 h-6 text-indigo-400" />}
                         </div>
                         <p className="text-4xl font-black text-white mt-1">{stat.value}</p>
@@ -49,7 +45,6 @@ function Dashboard() {
                 ))}
             </div>
 
-            {/* Progress Section */}
             <div className="bg-[#111827] p-8 rounded-3xl shadow-3xl shadow-indigo-900/50 border border-gray-700/50">
                 <h2 className="text-3xl font-bold text-white mb-8 border-b border-gray-600 pb-4">
                     My Current Learning Progress
@@ -71,18 +66,6 @@ function Dashboard() {
                         </div>
                     ))}
                 </div>
-
-                <button 
-                    className="mt-10 w-full py-4 text-white text-xl font-extrabold rounded-xl transition duration-500 
-                            bg-gradient-to-r from-indigo-600 to-violet-700 
-                            shadow-xl shadow-indigo-600/50
-                            hover:from-violet-700 hover:to-indigo-600 
-                            hover:scale-[1.01] 
-                            focus:ring-4 focus:ring-indigo-600/70 focus:outline-none"
-                    onClick={() => handleNavigation('/catalog')}
-                >
-                    CLICK HERE TO FIND NEW STUFF &rarr;
-                </button>
             </div>
         </div>
     );

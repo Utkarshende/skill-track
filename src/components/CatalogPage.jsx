@@ -35,31 +35,26 @@ function CatalogPage() {
    
 ];
 
-// --- 2. Reusable Course Card Component ---
 
 const CourseCard = ({ course }) => {
     return (
         <div 
             className={`group bg-[#111827] p-6 rounded-xl shadow-lg border border-gray-700/50 ${course.borderColor} transition duration-300 transform hover:-translate-y-1 cursor-pointer`}
         >
-            {/* Level Tag */}
             <span 
                 className={`inline-block px-3 py-1 text-xs font-semibold rounded-full ${course.bgColor} ${course.levelColor}`}
             >
                 {course.level}
             </span>
             
-            {/* Title */}
             <h3 
                 className={`text-2xl font-semibold text-white mt-3 mb-2 transition duration-300 group-hover:${course.levelColor.replace('text-', 'text-')}`}
             >
                 {course.title}
             </h3>
             
-            {/* Description */}
             <p className="text-gray-400 text-sm">{course.description}</p>
             
-            {/* Footer / Action */}
             <div className="flex justify-between items-center mt-4 pt-4 border-t border-gray-800">
                 <span className="text-lg font-bold text-indigo-400">{course.duration}</span>
                 <button 
@@ -79,7 +74,6 @@ const CourseCard = ({ course }) => {
                 Find and enroll in new learning paths to advance your skills.
             </p>
 
-            {/* Course Grid - Mapped */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {courses.map((course) => (
                     <CourseCard key={course.id} course={course} />
