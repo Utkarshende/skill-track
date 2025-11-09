@@ -23,7 +23,7 @@ Read-Only Data: Displays essential non-editable user information.
 
 Course Details: Clearly shows the currently enrolled course (e.g., "Full-Stack Developer") alongside an "Upgrade Course" call-to-action button.
 
-## Tech Stack
+## Tech Stack 🛠️
 
 Frontend Framework: React
 
@@ -31,12 +31,9 @@ Styling: Tailwind CSS (utility-first for fully responsive design)
 
 Icons: Lucide React
 
-🔗 Getting Started
+## Contact 📧
 
-To run this application locally, ensure you have a standard React development environment set up.
+For any inquiries or feedback, please contact:
 
-Clone the repository.
-
-Install dependencies: npm install (or yarn install)
-
-Run the application: npm start (or yarn start)
+Utkarsha Shende
+[utkarshapd1403@gmail.com]
