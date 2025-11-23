@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { X, CheckCircle } from 'lucide-react'; 
 
-function App() {
+function ProfilePage() {
     const [userName, setUserName] = useState("Utkarsha Shende");
     const [userEmail, setUserEmail] = useState("utkarsha@123gmail.com");
     const [userCourse, setUserCourse] = useState("Full-Stack Developer");
@@ -71,4 +71,4 @@ function App() {
     );
 };
 
-export default App;
+export default ProfilePage;
